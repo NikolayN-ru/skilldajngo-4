@@ -2,15 +2,25 @@
 {% load custom_filters %}
 {% load static %}
 {% block content %}
-
-
-
-<!-- Перед таблицей добавим форму для поиска -->
+<div class='form1'>
 <form method="GET">
-    {{ filter.form.as_ul }} <!-- Форму от фильтров за нас сделает django. А вот кнопку, увы придётся делать самому -->
+    {{ filter.form.as_ul }}
     <input type="submit" value="Найти">
 </form>
-<hr>
+</div>
+<!-- <hr>
+<form method="GET">
+    {{ filter.form.date }}
+    {{ filter.form.title }}
+    {{ filter.form.category }}
+    {{ filter.form.author }}
+    <input type="submit" value="Найти">
+    <hr>
+    {% for i in filter.form %}
+    <p>{{ i }}</p>
+    {% endfor %}
+</form>
+<hr> -->
 <table class="table">
   <thead>
     <tr>

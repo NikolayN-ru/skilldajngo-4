@@ -33,7 +33,7 @@ class PostCreate(CreateView):
 
 
 class ProductList(ListView):
-	paginate_by = 3
+	paginate_by = 2
 	model = Post
 	template_name = 'posts.html'
 	context_object_name = 'products'
@@ -64,6 +64,8 @@ class ProductSearch(ListView):
 		context = super().get_context_data(**kwargs)
 		context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
 		context['form'] = PostForm()
+		# for i in context:
+		# 	print(i)
 		return context
 
 	# def post(self, request, *args, **kwargs):

@@ -8,5 +8,6 @@ class PostFilter(FilterSet):
 		fields = {
 			'date':['gt'],
 			'title':['icontains'],
-			'author':['exact']
+			'category':['exact'],
+			'author':['exact'],
 		}
